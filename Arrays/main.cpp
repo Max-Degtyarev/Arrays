@@ -14,7 +14,7 @@ void main()
 	{
 		cin >> arr[i];
 	}
-	for (int i = n - 1; i >= 0; i--)
+	/*for (int i = n - 1; i >= 0; i--)
 	{
 		cout << arr[i] << "\t";
 	}
@@ -26,7 +26,33 @@ void main()
 	}
 	c = b / n;
 	cout << "Сумма элементов массива: " << b << endl;
-	cout << "Среднее арифметическое элементов массива: " << c;
+	cout << "Среднее арифметическое элементов массива: " << c;*/
+
+	int sum = 0;
+	for (int i = 0; i < n; i++)
+	{
+		sum += arr[i];
+
+	}
+	cout << "Сумма элементов массива: " << sum << endl;
+	cout << "Среднее арифметическое: " << (double)sum / n << endl;
+
+	int min, max;
+	min = max = arr[0];
+	for (int i = 0; i < n; i++)
+	{
+		if (arr[i] < min)min = arr[i];
+		if (arr[i] > max)max = arr[i];
+
+	}
+	cout << "Минимальное значение в массиве: " << min << endl;
+	cout << "Максимальное значение в массиве: " << max << endl;
+
+
+
+
+
+
 
 
 }
