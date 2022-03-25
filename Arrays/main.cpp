@@ -4,22 +4,36 @@ using namespace std;
 void main()
 {
 	setlocale(LC_ALL, "");
-	const int n = 5; // кол-во элементов массива (размер массива)
+	const int n = 10; // кол-во элементов массива (размер массива)
 	int arr[n] = { 3, 5, 8 };
 	//arr[2] = 123; // ќбращение ко второму элементу массива
+
+	int minRand;
+	int maxRand;
+	cout << "¬ведите минимально возможное случайное число: "; cin >> minRand;
+	cout << "¬ведите максимально возможное случайное число: "; cin >> maxRand;
 	double b = 0;
 	double c;
-	cout << "¬ведите элементы массива (" << n << " шт):";
+	/*cout << "¬ведите элементы массива (" << n << " шт):";*/
 	for (int i = 0; i < n; i++)
 	{
-		cin >> arr[i];
+		/*cin >> arr[i];*/
+		//arr[i] = rand() % 50 + 50;
+		arr[i] = rand() % (maxRand - minRand) + minRand;
 	}
-	/*for (int i = n - 1; i >= 0; i--)
+	for (int i = 0; i < n; i++)
 	{
 		cout << arr[i] << "\t";
 	}
 	cout << endl;
-	for (int i = 0; i < n; i++)
+	
+	for (int i = n - 1; i >= 0; i--)
+	{
+		cout << arr[i] << "\t";
+	}
+	cout << endl;
+
+	/*for (int i = 0; i < n; i++)
 	{
 		b = b + arr[i];
 

@@ -33,6 +33,24 @@ void main()
 	}
 	cout << endl << endl;
 
+	for (int i = 0; i < number_of_shifts * 2; i++)
+	{
+		int buffer = arr[n - 1];
+		for (int i = n - 1; i >= 0; i--)
+		{
+			arr[i] = arr[i - 1];
+
+		}
+		arr[0] = buffer;
+	}
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+	cout << endl;
+
+
+
 
 
 
