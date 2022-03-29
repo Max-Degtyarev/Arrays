@@ -10,16 +10,16 @@ void main()
 
 	int minRand;
 	int maxRand;
-	cout << "Введите минимально возможное случайное число: "; cin >> minRand;
-	cout << "Введите максимально возможное случайное число: "; cin >> maxRand;
+	//cout << "Введите минимально возможное случайное число: "; cin >> minRand;
+	//cout << "Введите максимально возможное случайное число: "; cin >> maxRand;
 	double b = 0;
 	double c;
 	/*cout << "Введите элементы массива (" << n << " шт):";*/
 	for (int i = 0; i < n; i++)
 	{
 		/*cin >> arr[i];*/
-		//arr[i] = rand() % 50 + 50;
-		arr[i] = rand() % (maxRand - minRand) + minRand;
+		arr[i] = rand() % 50 + 30;
+		//arr[i] = rand() % (maxRand - minRand) + minRand;
 	}
 	for (int i = 0; i < n; i++)
 	{
