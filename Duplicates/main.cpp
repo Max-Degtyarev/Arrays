@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 using namespace std;
 
 #define tab "\t"
@@ -23,19 +23,19 @@ void main()
 
 	for (int i = 0; i < n; i++)
 	{
-		bool already_there = false; // Ïðåäïîëàãàåì ÷òî âûáðàííûé ýëåìåíò ðàíåå íå âñòðå÷àëñÿ
+		bool already_there = false; // ÐŸÑ€ÐµÐ´Ð¿Ð¾Ð»Ð°Ð³Ð°ÐµÐ¼ Ñ‡Ñ‚Ð¾ Ð²Ñ‹Ð±Ñ€Ð°Ð½Ð½Ñ‹Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ñ€Ð°Ð½ÐµÐµ Ð½Ðµ Ð²ÑÑ‚Ñ€ÐµÑ‡Ð°Ð»ÑÑ
 		for (int j = 0; j < i; j++)
 		{
 			if (arr[i] == arr[j])
 			{
-				already_there = true;// Ýòîò ýëåìåíò óæå âñòðå÷àëñÿ ðàíåå
+				already_there = true;// Ð­Ñ‚Ð¾Ñ‚ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ ÑƒÐ¶Ðµ Ð²ÑÑ‚Ñ€ÐµÑ‡Ð°Ð»ÑÑ Ñ€Ð°Ð½ÐµÐµ
 				break;
 			}
 		}
 
 		if (already_there)continue;
 
-		int count = 1; //ñ÷åò÷èê ïîâòîðåíèé
+		int count = 1; //ÑÑ‡ÐµÑ‚Ñ‡Ð¸Ðº Ð¿Ð¾Ð²Ñ‚Ð¾Ñ€ÐµÐ½Ð¸Ð¹
 		for (int j = i + 1; j < n; j++)
 		{
 			if (arr[i] == arr[j])
@@ -43,14 +43,14 @@ void main()
 				count++;
 			}
 		}
-		if (count > 1)printf("Çíà÷åíèå %d âñòðå÷àåòñÿ %d ðàç\n", arr[i], count);
-		//if (count > 1)cout << arr[i] << " âñòðå÷àåòñÿ " << count << " ðàç" << endl;
-		//if (count > 0)cout << arr[i] << " ïîâòîðÿåòñÿ " << count << " ðàç" << endl;
+		if (count > 1)printf("Ð—Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ %d Ð²ÑÑ‚Ñ€ÐµÑ‡Ð°ÐµÑ‚ÑÑ %d Ñ€Ð°Ð·\n", arr[i], count);
+		//if (count > 1)cout << arr[i] << " Ð²ÑÑ‚Ñ€ÐµÑ‡Ð°ÐµÑ‚ÑÑ " << count << " Ñ€Ð°Ð·" << endl;
+		//if (count > 0)cout << arr[i] << " Ð¿Ð¾Ð²Ñ‚Ð¾Ñ€ÑÐµÑ‚ÑÑ " << count << " Ñ€Ð°Ð·" << endl;
 
 #ifdef SEARCH_1
 		if (!already_there)
 		{
-			int count = 1; //ñ÷åò÷èê ïîâòîðåíèé
+			int count = 1; //ÑÑ‡ÐµÑ‚Ñ‡Ð¸Ðº Ð¿Ð¾Ð²Ñ‚Ð¾Ñ€ÐµÐ½Ð¸Ð¹
 			for (int j = i + 1; j < n; j++)
 			{
 				if (arr[i] == arr[j])
@@ -58,8 +58,8 @@ void main()
 					count++;
 				}
 			}
-			if (count > 1)cout << arr[i] << " âñòðå÷àåòñÿ " << count << " ðàç" << endl;
-			//if (count > 0)cout << arr[i] << " ïîâòîðÿåòñÿ " << count << " ðàç" << endl;
+			if (count > 1)cout << arr[i] << " Ð²ÑÑ‚Ñ€ÐµÑ‡Ð°ÐµÑ‚ÑÑ " << count << " Ñ€Ð°Ð·" << endl;
+			//if (count > 0)cout << arr[i] << " Ð¿Ð¾Ð²Ñ‚Ð¾Ñ€ÑÐµÑ‚ÑÑ " << count << " Ñ€Ð°Ð·" << endl;
 		}
 #endif
 
