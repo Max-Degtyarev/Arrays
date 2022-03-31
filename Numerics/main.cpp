@@ -89,23 +89,13 @@ void main()
 	const int n = 8;
 	char hex[n] = {};
 	cout << "¬ведите дес€тичное число: "; cin >> decimal;
-	cout << decimal << endl;;
 	int a;
 	int i = 0;
 	for (; decimal; i++)
 	{
 		a = decimal % 16;
-		if (a == 10)hex[i] = 65;
-		else if (a == 11)hex[i] = 66;
-		else if (a == 12)hex[i] = 67;
-		else if (a == 13)hex[i] = 68;
-		else if (a == 14)hex[i] = 69;
-		else if (a == 15)hex[i] = 70;
-		else
-		{
-			a = a + '0';
-			hex[i] = (int)a;
-		}
+		a == 10 ? hex[i] = 65 : a == 11 ? hex[i] = 66 : a == 12 ? hex[i] = 67 : a == 13 ? hex[i] = 68 :
+			a == 14 ? hex[i] = 69 : a == 15 ? hex[i] = 70 : hex[i] = (int)a + '0';
 		decimal /= 16;
 	}
 	for (i--; i >= 0; i--)
@@ -118,18 +108,7 @@ void main()
 
 
 	
-	/*long long a;
-	long long b = 0;
-	cout << "¬ведите число: "; cin >> a;
-	for (; a > 0;)
-	{
-		
-		b = a % 16;
-		a /= 16;
-		cout << b << "\t" << a << endl;
-				
-	}*/
-
+	
 
 
 

@@ -6,7 +6,7 @@ using namespace std;
 void main()
 {
 	setlocale(LC_ALL, "");
-	const int n = 5;
+	const int n = 10;
 	int arr[n];
 	int minRand, maxRand;
 	cout << "¬ведите минимальное случайное число: "; cin >> minRand;
