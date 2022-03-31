@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 #include<conio.h>
 using namespace std;
 
@@ -14,7 +14,7 @@ void main()
 	const int SIZE = 32;
 	bool bin[SIZE] = {};
 	//int n = 0;
-	cout << "Ââåäèòå äåñÿòè÷íîå ÷èñëî: "; cin >> decimal;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´ÐµÑÑÑ‚Ð¸Ñ‡Ð½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: "; cin >> decimal;
 	/*for (int i = 0; decimal > 0; i++)
 	{
 		bin[i] = decimal % 2;
@@ -69,7 +69,7 @@ void main()
 	int decimal;
 	const int n = 11;
 	int oct[n] = {};
-	cout << "Ââåäèòå äåñÿòè÷íîå ÷èñëî: "; cin >> decimal;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´ÐµÑÑÑ‚Ð¸Ñ‡Ð½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: "; cin >> decimal;
 	int i = 0;
 	for (; decimal > 0; i++)
 	{
@@ -88,7 +88,7 @@ void main()
 	int decimal;
 	const int n = 8;
 	char hex[n] = {};
-	cout << "Ââåäèòå äåñÿòè÷íîå ÷èñëî: "; cin >> decimal;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´ÐµÑÑÑ‚Ð¸Ñ‡Ð½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: "; cin >> decimal;
 	int a;
 	int i = 0;
 	for (; decimal; i++)
