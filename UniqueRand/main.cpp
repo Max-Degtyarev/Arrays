@@ -5,6 +5,8 @@ using namespace std;
 //#define UNIQUE
 //#define DUPLICATE_1
 //#define DUPLICATE_2
+#define UNIQUE_1
+//#define UNIQUE_2
 
 
 
@@ -161,10 +163,17 @@ void main()
 				}
 			}
 		} while (!unique);
-
 	}
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr[i] << tab;
+	}
+	cout << endl;
+
 #endif
 
+
+#ifdef UNIQUE_2
 	for (int i = 0; i < n; i++)
 	{
 		arr[i] = rand() % n;
@@ -184,7 +193,7 @@ void main()
 		cout << arr[i] << tab;
 	}
 	cout << endl;
-
+#endif
 
 
 
