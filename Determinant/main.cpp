@@ -7,7 +7,8 @@ using namespace std;
 //#define SORT
 //#define UNIQUE
 //#define DUBLICATES
-#define CLASS_DET
+//#define CLASS_DET
+#define INVERSE
 
 
 void main()
@@ -303,9 +304,179 @@ void main()
 
 
 
+#ifdef INVERSE
+	const int m = 3;
+	const int n = 3;
+	printf("Исходная матрица \n");
+	int A[m][n] = {};
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			A[i][j] = rand()%7;
+			printf("%d %s", A[i][j], tab);
+ 		}
+		cout << endl;
+	}
+	cout << delimiter;
+
+	// Создаем расширенную матрицу
+	int B[m][n * 2] = {};
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			B[i][j] = B[i][j + n] = A[i][j];
+		}
+	}
+
+	// Вычисляем определитель матрицы
+	int a = 0;
+	int b = 0;
+	int d;
+	for (int i = 0; i < n; i++)
+	{
+		a += B[0][i] * B[1][i + 1] * B[2][i + 2];
+		b += B[0][i + 2] * B[1][i + 1] * B[2][i];
+	}
+	d = a - b;
+	printf("Определитель матрицы = %d \n", d);
+	cout << endl;
+
+	//Находим матрицу миноров
+	int C[m][n] = {};
+	int q = 1;
+	int s = 2;
+	for (int i = 0; i < m; i++)
+	{
+		int z = 1;
+		int r = 2;
+		for (int j = 0; j < n; j++)
+		{
+			C[i][j] = A[q][z] * A[s][r] - A[s][z] * A[q][r];
+			if (j == 1)r = 1;
+			z = 0;
+		}
+		if (i == 0)q = 0;
+		if (i == 1)s = 1;
+	}
+	cout << "Матрица миноров" << endl;
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			cout << C[i][j] << tab;
+		}
+		cout << endl;
+	}
+	cout << delimiter;
+
+	//Находим матрицу алгебраических дополнений
+	int D[m][n] = {};
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			D[i][j] = C[i][j];
+		}
+	}
+	D[0][1] = D[0][1] - D[0][1] * 2;
+	D[1][0] = D[1][0] - D[1][0] * 2;
+	D[1][2] = D[1][2] - D[1][2] * 2;
+	D[2][1] = D[2][1] - D[2][1] * 2;
+	cout << "Матрица алгебраических дополнений" << endl;
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			cout << D[i][j] << tab;
+		}
+		cout << endl;
+	}
+	cout << delimiter;
+
+	//Транспонированная матрица алгебраических дополнений
+	int E[m][n] = {};
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			E[i][j] = D[j][i];
+		}
+	}
+	cout << "Транспонированная матрица алгебраических дополнений" << endl;
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			cout << E[i][j] << tab;
+		}
+		cout << endl;
+	}
+	cout << delimiter;
+
+	//Обратная матрица
+
+	double f = 1 / (double)d;
+	cout << "Обратная матрица" << endl;
+	double F[m][n] = {};
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			F[i][j] = f * E[i][j];
+		}
+	}
+
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			cout << F[i][j] << tab;
+		}
+		cout << endl;
+	}
+	cout << delimiter;
+
+	//Проверка
+
+	double G[m][n] = {};
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			for (int k = 0; k < n; k++)
+			{
+				G[i][j] += A[i][k] * F[k][j];
+			}
+		}
+	}
+	cout << "Проверка" << endl;
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			cout << G[i][j] << tab;
+		}
+		cout << endl;
+	}
 
 
 
 
 
-}
+
+
+
+
+
+#endif
+
+
+
+
+
+
+
+
+} 
